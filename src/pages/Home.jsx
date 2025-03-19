@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import profileImage from '../assets/images/imagepro.jpg'; 
 import { stats } from '../data/stats'; 
+import DecryptedText from '../components/DecryptedText'; // Assurez-vous que le chemin est correct
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -34,8 +35,16 @@ function Home() {
 
         {/* Partie droite : Texte et statistiques */}
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-5xl font-bold mb-4">Fetra Andriamamonjy</h1>
-          <p className="text-lg mb-6">
+          <DecryptedText
+            text="Fetra Andriamamonjy"
+            speed={50}
+            maxIterations={10}
+            sequential={true}
+            revealDirection="start"
+            className="text-5xl font-bold mb-4 text-white"
+            animateOn="view" // Animation au premier affichage
+          />
+          <p className="text-lg mb-6 pt-12">
             Un développeur frontend passionné par la création d'interfaces utilisateur intuitives et esthétiques. Avec une expertise en React et une maîtrise des technologies web modernes, je transforme des concepts en expériences interactives captivantes. Mon objectif est de construire des applications fluides et réactives qui répondent aux besoins des utilisateurs.
           </p>
           <p className="text-md mb-8">
