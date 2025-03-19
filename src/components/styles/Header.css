@@ -1,3 +1,4 @@
+/* Header.css */
 :root {
   --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
 }
@@ -28,7 +29,7 @@
 .effect.filter::before {
   content: "";
   position: absolute;
-  inset: -75px;
+  inset: -20px; 
   z-index: -2;
   background: black;
 }
@@ -161,4 +162,76 @@ ul {
 
 .motion-div {
   padding-top: 0.5rem;
+}
+
+/* Styles responsive pour le menu hamburger */
+.hamburger {
+  display: none; /* Caché par défaut */
+}
+
+.hamburger-icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  bottom: -8px;
+}
+
+.nav-list {
+  transition: all 0.3s ease;
+}
+
+/* Media query pour mobile (écrans < 768px) */
+@media (max-width: 767px) {
+  .hamburger {
+    display: block; /* Afficher le bouton hamburger sur mobile */
+  }
+
+  .nav-list {
+    display: none; /* Cacher la liste par défaut sur mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Fond sombre pour le menu déroulant */
+    padding: 1rem;
+    z-index: 20;
+  }
+
+  .nav-list.open {
+    display: flex; /* Afficher la liste quand le menu est ouvert */
+  }
+
+  .nav-list li {
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Styles pour écrans moyens et plus grands (md et au-dessus) */
+@media (min-width: 768px) {
+  .nav-list {
+    display: flex !important; /* Toujours visible sur desktop */
+  }
 }

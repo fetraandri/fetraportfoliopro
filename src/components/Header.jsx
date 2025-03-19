@@ -4,6 +4,7 @@ import './styles/Header.css'; // Importation du fichier CSS
 
 function Header() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour le menu mobile
   const containerRef = useRef(null);
   const navRef = useRef(null);
   const filterRef = useRef(null);
@@ -109,6 +110,7 @@ function Header() {
       void textRef.current.offsetWidth;
       textRef.current.classList.add('active');
     }
+    setIsMenuOpen(false); // Ferme le menu mobile après un clic
   };
 
   useEffect(() => {
@@ -146,9 +148,18 @@ function Header() {
       ref={containerRef}
     >
       <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
+        {/* Bouton hamburger pour mobile */}
+        <button
+          className="hamburger md:hidden p-4"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="hamburger-icon"></span>
+        </button>
+
+        {/* Menu de navigation */}
         <ul
           ref={navRef}
-          className="flex gap-8 list-none p-0 px-4 m-0 relative z-[3] justify-center w-full"
+          className={`nav-list ${isMenuOpen ? 'open' : ''} flex gap-8 list-none p-0 px-4 m-0 relative z-[3] justify-center w-full md:flex`}
           style={{
             color: 'white',
             textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)',
