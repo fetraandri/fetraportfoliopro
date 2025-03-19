@@ -1,0 +1,65 @@
+/* projects.css */
+.projects-container {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.projects-progress {
+    position: absolute;
+    top: -65px;
+    left: -15px;
+    transform: rotate(-90deg);
+    width: 80px;
+    height: 80px;
+}
+
+.projects-progress circle {
+    stroke-dashoffset: 0;
+    stroke-width: 10%;
+    fill: none;
+}
+
+.projects-progress .bg {
+    stroke: #4b5563;
+}
+
+.projects-progress .indicator {
+    stroke: #3b82f6;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
+    height: 300px;
+    width: 100%; /* Largeur fixe pour le conteneur */
+    overflow-x: auto; /* Change à auto pour afficher la barre seulement si nécessaire */
+    overflow-y: hidden; /* Empêche le scroll vertical */
+    padding: 20px 0;
+    gap: 20px;
+    background: #1f2937;
+}
+
+.projects-list::-webkit-scrollbar {
+    height: 5px;
+    background: #ffffff33;
+    border-radius: 4px;
+}
+
+.projects-list::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+}
+
+.projects-list::-webkit-scrollbar-corner {
+    background: #ffffff33;
+}
+
+.project-card {
+    flex: 0 0 250px; /* Largeur fixe, pas de rétrécissement */
+    background: #1f2937;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
