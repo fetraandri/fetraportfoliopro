@@ -1,4 +1,6 @@
+// pages/Contact.jsx
 import { motion } from 'framer-motion';
+import ContactForm from '../components/ContactForm';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -9,20 +11,15 @@ function Contact() {
   return (
     <motion.section
       id="contact"
-      className="min-h-screen flex items-center justify-center pt-16"
+      className="min-h-screen flex items-center justify-center pt-16 bg-gray-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={sectionVariants}
     >
-      <div className="container mx-auto p-6 text-center text-white">
-        <h1 className="text-4xl font-bold mb-4">Contactez-moi</h1>
-        <p>
-          Envoyez-moi un message à :{' '}
-          <a href="mailto:hei.fetra@gmail.com" className="text-blue-300 hover:underline">
-            hei.fetra@gmail.com
-          </a>
-        </p>
+      <div className="container mx-auto p-6 text-white">
+        <h1 className="text-4xl font-bold text-center mb-8">Contactez-moi</h1>
+        <ContactForm />
       </div>
     </motion.section>
   );

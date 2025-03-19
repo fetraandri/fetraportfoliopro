@@ -6,7 +6,7 @@ import SplitText from './components/SplitText';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import Contact from './pages/Contact'; 
 
 function App() {
   const [isIntroComplete, setIsIntroComplete] = useState(false);
@@ -19,7 +19,6 @@ function App() {
 
   return (
     <div className="relative min-h-screen">
-      {/* Assurez-vous que Particles couvre tout l'écran */}
       <div className="fixed inset-0 z-0">
         <Particles
           particleCount={200}
@@ -51,7 +50,7 @@ function App() {
           />
         </div>
       ) : (
-        <div className="relative z-10">
+        <div className="relative z-10 pt-20">
           <Header />
           <Home />
           <About />
