@@ -45,7 +45,7 @@ function About() {
           </p>
         </motion.div>
 
-        {/* Partie droite : Compétences et CV */}
+        {}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           {/* Compétences */}
           <h2 className="text-3xl font-semibold mb-8 text-center">Compétences</h2>
@@ -55,13 +55,13 @@ function About() {
                 <div className="flex justify-between mb-2 items-center">
                   <span className="text-lg font-medium flex items-center gap-2">
                     {skillIcons[skill.name]}
-                    <span>{skill.name}</span> {/* Optionnel : supprimer si vous voulez uniquement les icônes */}
+                    <span>{skill.name}</span> {}
                   </span>
                   <span className="text-blue-300">{skill.percent}%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-3">
                   <motion.div
-                    className="bg-blue-500 h-3 rounded-full" // Correction ici
+                    className="bg-blue-500 h-3 rounded-full" 
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
