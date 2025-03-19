@@ -1,3 +1,4 @@
+// App.jsx
 import { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,15 +7,25 @@ import SplitText from './components/SplitText';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Contact from './pages/Contact'; 
+import Contact from './pages/Contact';
+import CVViewer from './pages/CVViewer';
 
 function App() {
   const [isIntroComplete, setIsIntroComplete] = useState(false);
+  const [currentPage, setCurrentPage] = useState('main'); // 'main' ou 'cv'
 
   const handleIntroComplete = () => {
     setTimeout(() => {
       setIsIntroComplete(true);
     }, 500);
+  };
+
+  const handleViewCV = () => {
+    setCurrentPage('cv');
+  };
+
+  const handleBackToMain = () => {
+    setCurrentPage('main');
   };
 
   return (
@@ -49,15 +60,17 @@ function App() {
             onLetterAnimationComplete={handleIntroComplete}
           />
         </div>
-      ) : (
+      ) : currentPage === 'main' ? (
         <div className="relative z-10 pt-20">
           <Header />
           <Home />
-          <About />
+          <About onViewCV={handleViewCV} />
           <Projects />
           <Contact />
           <Footer />
         </div>
+      ) : (
+        <CVViewer />
       )}
     </div>
   );

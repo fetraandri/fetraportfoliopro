@@ -13,7 +13,6 @@
     border-radius: 9999px;
   }
   
-  /* Styles pour centrer les boutons */
   .cv-buttons-container {
     display: flex;
     flex-direction: column; 

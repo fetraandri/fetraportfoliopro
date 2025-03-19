@@ -11,7 +11,7 @@ function Contact() {
   return (
     <motion.section
       id="contact"
-      className="min-h-screen flex items-center justify-center pt-16 bg-gray-900"
+      className="min-h-screen flex items-center justify-center pt-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

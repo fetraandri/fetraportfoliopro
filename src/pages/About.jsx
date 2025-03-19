@@ -1,8 +1,11 @@
+// pages/About.jsx
 import { motion } from 'framer-motion';
 import { aboutStats } from '../data/aboutStats';
 import '../pages/styles/AboutSkills.css';
 import { FaJsSquare, FaReact } from 'react-icons/fa';
 import { SiReact, SiSpringboot } from 'react-icons/si';
+import DownloadCV from '../components/DownloadCV';
+import InteractiveCV from '../components/InteractiveCV';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -21,7 +24,7 @@ const skillIcons = {
   "Java Spring Boot": <SiSpringboot className="text-2xl text-green-500" />,
 };
 
-function About() {
+function About({ onViewCV }) {
   return (
     <motion.section
       id="about"
@@ -45,7 +48,7 @@ function About() {
           </p>
         </motion.div>
 
-        {}
+        {/* Partie droite : Compétences et CV */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           {/* Compétences */}
           <h2 className="text-3xl font-semibold mb-8 text-center">Compétences</h2>
@@ -55,13 +58,13 @@ function About() {
                 <div className="flex justify-between mb-2 items-center">
                   <span className="text-lg font-medium flex items-center gap-2">
                     {skillIcons[skill.name]}
-                    <span>{skill.name}</span> {}
+                    <span>{skill.name}</span>
                   </span>
                   <span className="text-blue-300">{skill.percent}%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-3">
                   <motion.div
-                    className="bg-blue-500 h-3 rounded-full" 
+                    className="bg-blue-500 h-3 rounded-full"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -78,21 +81,8 @@ function About() {
             <h3 className="text-xl font-medium mb-4">Intéressé par mon profil ?</h3>
             <p className="mb-6">Vous pouvez télécharger mon CV ou accéder à une version interactive en ligne.</p>
             <div className="cv-buttons-container">
-              <a
-                href="/cv-fetra.pdf"
-                download
-                className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
-              >
-                Télécharger le CV
-              </a>
-              <a
-                href="https://your-interactive-cv-link.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-transparent border-2 border-blue-500 text-blue-500 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
-              >
-                CV Interactif
-              </a>
+              <DownloadCV />
+              <InteractiveCV onViewCV={onViewCV} />
             </div>
           </div>
         </div>
