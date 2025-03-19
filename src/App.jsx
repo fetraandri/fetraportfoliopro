@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProjectCard from './components/ProjectCard';
+import Particles from './components/Particles';
 import { projects } from './data/projects';
 
 function App() {
@@ -11,80 +12,97 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-100">
-      <Header />
+    <div className="relative min-h-screen">
+      {}
+      <Particles
+        particleCount={2000}
+        particleSpread={10}
+        speed={0.1}
+        particleColors={["#ffffff", "#ffffff", "#ffffff"]} 
+        moveParticlesOnHover={true} 
+        particleHoverFactor={1}
+        alphaParticles={true} 
+        particleBaseSize={300}
+        sizeRandomness={1}
+        cameraDistance={20}
+      />
 
-      {/* Section Accueil */}
-      <motion.section
-        id="home"
-        className="min-h-screen flex items-center justify-center pt-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="container mx-auto p-6 text-center">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">Bienvenue</h1>
-          <p className="text-lg text-gray-600">Je suis Fetrakely, développeur web passionné.</p>
-        </div>
-      </motion.section>
+      {}
+      <div className="relative z-10">
+        <Header />
 
-      {/* Section À propos */}
-      <motion.section
-        id="about"
-        className="min-h-screen flex items-center justify-center bg-gray-200"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="container mx-auto p-6">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4 text-center">À propos de moi</h1>
-          <p className="text-gray-600 text-center">Je suis un développeur qui adore créer des applications modernes et performantes.</p>
-        </div>
-      </motion.section>
-
-      {/* Section Projets */}
-      <motion.section
-        id="projects"
-        className="min-h-screen flex items-center justify-center pt-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="container mx-auto p-6">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">Mes Projets</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-                image={project.image}
-              />
-            ))}
+        {/* Section Accueil */}
+        <motion.section
+          id="home"
+          className="min-h-screen flex items-center justify-center pt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <div className="container mx-auto p-6 text-center text-white">
+            <h1 className="text-5xl font-bold mb-4">Bienvenue</h1>
+            <p className="text-lg">Je suis Fetrakely, développeur web passionné.</p>
           </div>
-        </div>
-      </motion.section>
+        </motion.section>
 
-      {/* Section Contact */}
-      <motion.section
-        id="contact"
-        className="min-h-screen flex items-center justify-center bg-gray-200 pt-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="container mx-auto p-6 text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Contactez-moi</h1>
-          <p className="text-gray-600">Envoyez-moi un message à : <a href="mailto:tonemail@example.com" className="text-blue-500 hover:underline">tonemail@example.com</a></p>
-        </div>
-      </motion.section>
+        {/* Section À propos */}
+        <motion.section
+          id="about"
+          className="min-h-screen flex items-center justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <div className="container mx-auto p-6 text-center text-white">
+            <h1 className="text-4xl font-bold mb-4">À propos de moi</h1>
+            <p>Je suis un développeur qui adore créer des applications modernes et performantes.</p>
+          </div>
+        </motion.section>
 
-      <Footer />
+        {/* Section Projets */}
+        <motion.section
+          id="projects"
+          className="min-h-screen flex items-center justify-center pt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <div className="container mx-auto p-6 text-white">
+            <h1 className="text-4xl font-bold mb-6 text-center">Mes Projets</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  link={project.link}
+                  image={project.image}
+                />
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Section Contact */}
+        <motion.section
+          id="contact"
+          className="min-h-screen flex items-center justify-center pt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <div className="container mx-auto p-6 text-center text-white">
+            <h1 className="text-4xl font-bold mb-4">Contactez-moi</h1>
+            <p>Envoyez-moi un message à : <a href="mailto:tonemail@example.com" className="text-blue-300 hover:underline">tonemail@example.com</a></p>
+          </div>
+        </motion.section>
+
+        <Footer />
+      </div>
     </div>
   );
 }
