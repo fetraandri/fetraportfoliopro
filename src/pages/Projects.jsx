@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
@@ -31,6 +31,24 @@ function Projects() {
               index={index} // Passer l'index pour une animation décalée
             />
           ))}
+        </div>
+        {/* Phrase globale et invitation au repository */}
+        <div className="text-center mt-12">
+          <p className="text-gray-400 italic text-lg mb-2">
+            "Ces projets illustrent mon engagement à transformer des idées en solutions concrètes et performantes."
+          </p>
+          <p className="text-gray-500 text-sm">
+            Certains projets ne sont pas encore déployés.{" "}
+            <a
+              href="https://github.com/fetraandri" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:underline"
+            >
+              Visitez mon repository
+            </a>{" "}
+            pour découvrir davantage de réalisations.
+          </p>
         </div>
       </div>
     </motion.section>
