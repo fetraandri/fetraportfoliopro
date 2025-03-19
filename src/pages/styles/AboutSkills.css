@@ -1,0 +1,29 @@
+
+  
+  .skills-container .skill-bar-container {
+    width: 100%;
+    background-color: #4b5563;
+    border-radius: 9999px;
+    height: 8px;
+  }
+  
+  .skills-container .skill-bar-container .skill-bar {
+    height: 8px;
+    background-color: #3b82f6;
+    border-radius: 9999px;
+  }
+  
+  /* Styles pour centrer les boutons */
+  .cv-buttons-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centre horizontalement en colonne */
+    gap: 1.5rem; /* Espace entre les boutons, équivalent à gap-6 */
+  }
+  
+  @media (min-width: 640px) { /* sm: en Tailwind */
+    .cv-buttons-container {
+      flex-direction: row; /* Disposition horizontale sur desktop */
+      justify-content: center; /* Centre horizontalement en ligne */
+    }
+  }

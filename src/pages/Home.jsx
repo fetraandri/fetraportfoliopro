@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import profileImage from '../assets/images/imagepro.jpg'; // Import de l'image
-import { stats } from '../data/stats'; // Import des statistiques
+import profileImage from '../assets/images/imagepro.jpg'; 
+import { stats } from '../data/stats'; 
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
