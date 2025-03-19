@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProjectCard from './components/ProjectCard';
@@ -97,7 +97,7 @@ function App() {
         >
           <div className="container mx-auto p-6 text-center text-white">
             <h1 className="text-4xl font-bold mb-4">Contactez-moi</h1>
-            <p>Envoyez-moi un message à : <a href="mailto:tonemail@example.com" className="text-blue-300 hover:underline">tonemail@example.com</a></p>
+            <p>Envoyez-moi un message à : <a href="mailto:tonemail@example.com" className="text-blue-300 hover:underline">hei.fetra@gmail.com</a></p>
           </div>
         </motion.section>
 
