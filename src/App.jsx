@@ -9,6 +9,8 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import CVViewer from './pages/CVViewer';
+import Achievements from './pages/Achievements'; // Nouvelle importation
+
 
 function App() {
   const [isIntroComplete, setIsIntroComplete] = useState(false);
@@ -66,6 +68,7 @@ function App() {
           <Home />
           <About onViewCV={handleViewCV} />
           <Projects />
+          <Achievements /> {/* Ajout de la nouvelle page */}
           <Contact />
           <Footer />
         </div>

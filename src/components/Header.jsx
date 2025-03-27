@@ -14,6 +14,7 @@ function Header() {
     { label: 'Accueil', href: '#home' },
     { label: 'À propos', href: '#about' },
     { label: 'Projets', href: '#projects' },
+    { label: 'Réalisations', href: '#achievements' }, 
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -115,7 +116,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'projects','achievements', 'contact'];
       const scrollPosition = window.scrollY + 100;
       for (const section of sections) {
         const element = document.getElementById(section);

@@ -19,7 +19,7 @@ function Projects() {
       variants={sectionVariants}
     >
       <div className="container mx-auto p-6 text-white">
-        <h1 className="text-4xl font-bold mb-12 text-center">Mes Projets</h1>
+        <h1 className="text-4xl font-bold mb-12 text-center">Mes Projets en développement d'application Web</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard

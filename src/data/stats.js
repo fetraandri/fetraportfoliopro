@@ -12,7 +12,7 @@ export const stats = [
     {
       id: 3,
       label: "Compétences clés",
-      value: "React, NextJs , React Native , JS, CSS , Java",
+      value: "React, NextJs , React Native , Html, Javascript, CSS , Java",
     },
     {
       id: 4,
