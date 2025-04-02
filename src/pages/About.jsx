@@ -24,7 +24,7 @@ const skillIcons = {
   "Java Spring Boot": <SiSpringboot className="text-2xl text-green-500" />,
 };
 
-function About({ onViewCV }) {
+function About() {
   return (
     <motion.section
       id="about"
@@ -82,7 +82,7 @@ function About({ onViewCV }) {
             <p className="mb-6">Vous pouvez télécharger mon CV ou accéder à une version interactive en ligne.</p>
             <div className="cv-buttons-container">
               <DownloadCV />
-              <InteractiveCV onViewCV={onViewCV} />
+              <InteractiveCV />
             </div>
           </div>
         </div>

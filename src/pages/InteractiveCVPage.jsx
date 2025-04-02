@@ -1,21 +1,12 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const sectionVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-};
+function InteractiveCVPage() {
+  console.log("InteractiveCVPage is rendering");
 
-function CVViewer() {
   return (
-    <motion.section
-      className="min-h-screen flex items-center justify-center bg-gray-900 p-6"
-      initial="hidden"
-      animate="visible"
-      variants={sectionVariants}
-    >
-      <div className="container mx-auto text-center">
-        <h1 className="text-4xl font-bold text-white mb-8">Mon CV Interactif</h1>
+    <div className="relative z-10 min-h-screen bg-gray-900 text-white flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-8">Mon CV Interactif</h1>
         <a
           href="https://drive.google.com/file/d/1HhnHQ9F8y8MWx7X5jiv4Ku6tZBJKWu5j/view"
           target="_blank"
@@ -33,8 +24,8 @@ function CVViewer() {
           </Link>
         </div>
       </div>
-    </motion.section>
+    </div>
   );
 }
 
-export default CVViewer;
+export default InteractiveCVPage;
