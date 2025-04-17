@@ -2,6 +2,7 @@ import gmaoImage from '../assets/images/gmaosary.jpg';
 import signature from '../assets/images/signature.png';
 import logopassioncampagne from '../assets/images/passioncampagne.png';
 import yvonportfolioimg from '../assets/images/yvnportfolio.png';
+import felanaportfolioimg from '../assets/images/felanaportfolio.png'; 
 
 
 export const projects = [
@@ -29,9 +30,16 @@ export const projects = [
   {
     id: 4,
     title: "Portfolio Yvon ",
-    description: "Portfolio professionnelle  développée avec ReactJS, déployée sur Vercel ,avec des données statiques tout simplement",
+    description: "Portfolio professionnelle développée avec ReactJS, déployée sur Vercel ,avec des données statiques tout simplement",
     link: "https://yvonraharinjatovo.vercel.app/",
     image: yvonportfolioimg,
+  },
+  {
+    id: 5,
+    title: "Portfolio Felana",
+    description: "Portfolio professionnelle développée avec ReactJS, déployée sur Vercel ,avec des données statiques tout simplement",
+    link: "https://felana.vercel.app/",
+    image: felanaportfolioimg,
   },
 
 ];
